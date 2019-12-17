@@ -29,3 +29,5 @@ Thực hiện nhận diện cử chỉ tay áp dụng trong việc nhận diện
 5. Nhân Predict để dự đoán từ được nối từ các chữ cái nhận được.
 
 Các chữ cái được nhận liên tiếp trong 2s xem như nhận đúng chữ đó.
+
+Link demo: https://www.youtube.com/watch?v=DvuglmDpWIY
