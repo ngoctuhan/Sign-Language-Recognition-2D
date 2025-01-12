@@ -1,33 +1,47 @@
 # SignLanguageRecognition2D
 
-* Nội dung 
-Thực hiện nhận diện cử chỉ tay áp dụng trong việc nhận diện ngôn ngữ kí hiệu cho người câm điếc. 
+A real-time sign language recognition system that detects and interprets hand gestures for deaf and mute individuals.
 
-* Công nghệ sử dụng 
-1. Sử dụng ROI để detect khu vực bàn tay.
-2. Thực hiện tiền xử lí hình ảnh: lọc nhiễu Gause, làm mịn, phân ngưỡng tự động Ostu.
-3. Đầu ra của quá trình xử lí ảnh là ảnh nhị phận ảnh được đưa qua mô hình VGG 16 để phân loại đó thuộc loại nào trong bảng chữ cái.
-4. ánh xạ đầu ra các từ trong bản chữ cái.
+## Overview
 
-* Cấu trúc Project
+This project implements a computer vision system that recognizes hand gestures and translates them into sign language alphabet characters. The system uses a combination of image processing techniques and deep learning to achieve accurate recognition in real-time.
 
-1. static: các file html, css, js
-2. models: foder chưa model đã được trainning trước, tranfer từ mô hình VGG16
-3. webstreaming.py file để run project dạng giao diện website.
+## Technical Implementation
 
-* Công nghệ sử dụng:
-1. Flask backend end website
-2. Tensorflow==1.14
-3. OpenCV==4.1
-4. Numpy==1.16
+### Key Features
 
-* Hướng dẫn sử dụng 
-1. Run file python và chờ load model và khởi tạo tham số.
-2. Truy cập 127.0.0.2:5000 để ra giao diện sử dụng.
-3. Chờ một vài s để hệ thống capture lại nền phục vụ quá trình xóa nền.
-4. Thực hiện thao tác nhận dạng tay trong khu vực đã được ROI sẵn.
-5. Nhân Predict để dự đoán từ được nối từ các chữ cái nhận được.
+- Region of Interest (ROI) detection for hand area isolation
+- Advanced image preprocessing pipeline including:
+  - Gaussian noise filtering
+  - Image smoothing
+  - Automatic Otsu thresholding
+- Binary image classification using a pre-trained VGG16 model
+- Real-time mapping of classifications to alphabet characters
 
-Các chữ cái được nhận liên tiếp trong 2s xem như nhận đúng chữ đó.
+### Project Structure
 
-Link demo: https://www.youtube.com/watch?v=DvuglmDpWIY
+- `static/`: Frontend assets (HTML, CSS, JavaScript files)
+- `models/`: Pre-trained models (Transfer learning from VGG16)
+- `webstreaming.py`: Main application file for web interface implementation
+
+### Technologies Used
+
+- Frontend: HTML, CSS, JavaScript
+- Backend: Flask
+- Machine Learning: TensorFlow 1.14
+- Computer Vision: OpenCV 4.1
+- Data Processing: NumPy 1.16
+
+## Usage Instructions
+
+1. Run the Python script and wait for model loading and parameter initialization
+2. Access the application interface at `127.0.0.2:5000`
+3. Wait a few seconds for the system to capture the background (used for background removal)
+4. Perform hand gestures within the designated ROI area
+5. Click "Predict" to get word predictions based on recognized alphabet characters
+
+Note: Characters that are consistently recognized for 2 seconds are considered valid inputs.
+
+## Demo
+
+Watch the demonstration video: [SignLanguageRecognition2D Demo](https://www.youtube.com/watch?v=DvuglmDpWIY)
