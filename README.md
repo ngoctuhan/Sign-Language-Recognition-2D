@@ -1,4 +1,4 @@
-# SignLanguageRecognition2D
+# Sign-Language-Recognition-2D
 
 A real-time sign language recognition system that detects and interprets hand gestures for deaf and mute individuals.
 
